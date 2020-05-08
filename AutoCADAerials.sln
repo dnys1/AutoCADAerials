@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.960
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertAerial", "InsertAerial\InsertAerial.csproj", "{B880B940-B65E-416A-ACCE-3111D6DA7C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACADAerialPlugin", "ACADAerialPlugin\ACADAerialPlugin.csproj", "{CC408207-A647-4E96-82F7-ABF28C34DE56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B880B940-B65E-416A-ACCE-3111D6DA7C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B880B940-B65E-416A-ACCE-3111D6DA7C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B880B940-B65E-416A-ACCE-3111D6DA7C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B880B940-B65E-416A-ACCE-3111D6DA7C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B4C37A0-CAE2-45C2-8D3F-E12E1EB60F03}
+	EndGlobalSection
+EndGlobal
