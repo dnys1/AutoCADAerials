@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertAerial", "InsertAeria
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACADAerialPlugin", "ACADAerialPlugin\ACADAerialPlugin.csproj", "{CC408207-A647-4E96-82F7-ABF28C34DE56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{F053AD28-2FCF-41CA-983C-7DC8055D726B}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Installer", "Installer\Installer.vdproj", "{7E9BB962-5151-4BFA-9F2B-4CFD61FAEFF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,12 @@ Global
 		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC408207-A647-4E96-82F7-ABF28C34DE56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F053AD28-2FCF-41CA-983C-7DC8055D726B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F053AD28-2FCF-41CA-983C-7DC8055D726B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F053AD28-2FCF-41CA-983C-7DC8055D726B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F053AD28-2FCF-41CA-983C-7DC8055D726B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E9BB962-5151-4BFA-9F2B-4CFD61FAEFF9}.Debug|Any CPU.ActiveCfg = Debug
+		{7E9BB962-5151-4BFA-9F2B-4CFD61FAEFF9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

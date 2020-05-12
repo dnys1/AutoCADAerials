@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationPackage SchemaVersion="1.0"
+AutodeskProduct="AutoCAD"
+ProductType="Application"
+Name="AutoCAD Aerials"
+Description="An aerial retrieval and update tool for AutoCAD"
+AppVersion="1.0.0"
+Author="Dillon Nys"
+ProductCode="{9A666512-1DEA-4872-9EFB-69A47AD6AD21}"
+UpgradeCode="{A1873EEA-5A58-4EE7-8136-1688C703EBEE}">
+  <CompanyDetails Name="Brown and Caldwell" Url="www.BrownAndCaldwell.com" Email="DNys@BrwnCald.com" />
+  <Components Description="Runtime parts">
+    <RuntimeRequirements OS="Win64" Platform="AutoCAD|AutoCAD*" SeriesMin="R22.0" SeriesMax="R24.0" />
+    <ComponentEntry AppName="AutoCADAerials" Version="1.0.0" ModuleName="./ACADAerialPlugin.dll" LoadOnAutoCADStartup="True">
+      <Commands>
+        <Command Local="INSERTAERIAL" Global="INSERTAERIAL" />
+        <Command Local="UPDATEAERIAL" Global="INSERTAERIAL" />
+      </Commands>
+    </ComponentEntry>
+  </Components>
+</ApplicationPackage>

@@ -6,6 +6,8 @@ using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.EditorInput;
+using Autodesk.AutoCAD.Windows;
+using Exception = Autodesk.AutoCAD.Runtime.Exception;
 
 // This line is not mandatory, but improves loading performances
 [assembly: ExtensionApplication(typeof(ACADAerialPlugin.MyPlugin))]
@@ -18,6 +20,7 @@ namespace ACADAerialPlugin
     // then you should remove this class.
     public class MyPlugin : IExtensionApplication
     {
+        private ContextMenuExtension contextMenu;
 
         void IExtensionApplication.Initialize()
         {
@@ -39,13 +42,80 @@ namespace ACADAerialPlugin
             // as well as some of the existing AutoCAD managed apps.
 
             // Initialize your plug-in application here
+            AddContextMenu();
         }
 
         void IExtensionApplication.Terminate()
         {
             // Do plug-in application clean up here
+            RemoveContextMenu();
         }
 
+        private void AddContextMenu()
+        {
+            Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
+
+            try
+            {
+                contextMenu = new ContextMenuExtension();
+                contextMenu.Title = "Aerials";
+
+                // Insert Aerial button
+                MenuItem insertAerialMI = new MenuItem("Insert Aerial");
+                insertAerialMI.Click += InsertAerialCallback;
+
+                // Update Aerial button
+                MenuItem updateAerialMI = new MenuItem("Update Aerial");
+                updateAerialMI.Click += UpdateAerialCallback;
+
+                contextMenu.MenuItems.Add(insertAerialMI);
+                contextMenu.MenuItems.Add(updateAerialMI);
+
+                Application.AddDefaultContextMenuExtension(contextMenu);
+
+            } catch (Exception ex)
+            {
+                ed.WriteMessage("Error adding context menu: " + ex.Message + '\n');
+            }
+        }
+
+        private void RemoveContextMenu()
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+
+            try
+            {
+                if (contextMenu != null)
+                {
+                    Application.RemoveDefaultContextMenuExtension(contextMenu);
+                    contextMenu = null;
+                }
+            } catch (Exception ex)
+            {
+                if (doc != null)
+                {
+                    doc.Editor.WriteMessage("Error unloading context menu: " + ex.Message + '\n');
+                }
+            }
+        }
+
+        private void InsertAerialCallback(object sender, EventArgs e)
+        {
+            Document activeDoc = Application.DocumentManager.MdiActiveDocument;
+            using (DocumentLock docLock = activeDoc.LockDocument())
+            {
+                activeDoc.SendStringToExecute("INSERTAERIAL\n", false, false, false);
+            }
+        }
+
+        private void UpdateAerialCallback(object sender, EventArgs e)
+        {
+            Document activeDoc = Application.DocumentManager.MdiActiveDocument;
+            using (DocumentLock docLock = activeDoc.LockDocument())
+            {
+                activeDoc.SendStringToExecute("UPDATEAERIAL\n", false, false, false);
+            }
+        }
     }
 
 }

@@ -52,6 +52,23 @@
             return map.getMapTypeId();
         }
 
+        function setCenter(centerString) {
+            const lat = centerString.split(',')[0];
+			const lng = centerString.split(',')[1];
+            map.setCenter({
+                lat: lat,
+                lng: lng,
+            });
+        }
+
+        function setZoom(zoom) {
+            map.setZoom(zoom);
+        }
+
+        function setMapType(mapTypeId) {
+            map.setMapTypeId(mapTypeId);
+        }
+
         function searchAddress(address) {
             if (map !== null && geocoder != null) {
                 geocoder.geocode({ 'address': address }, function (results, status) {

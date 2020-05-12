@@ -78,6 +78,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{f053ad28-2fcf-41ca-983c-7dc8055d726b}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InsertAerial\InsertAerial.csproj">
+      <Project>{b880b940-b65e-416a-acce-3111d6da7c97}</Project>
+      <Name>InsertAerial</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="myCommands.Designer.cs">
@@ -117,6 +125,11 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="PackageContents.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
